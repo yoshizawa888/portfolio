@@ -15,6 +15,22 @@
 	@media screen and (max-width: 768px) {
 		width: 100%;
 	}
+  &:hover {
+		.work-img-wrap {
+			&::after {
+				opacity: 0.75;
+        @media screen and (max-width: 768px) {
+          opacity: 0;
+        }
+			}
+		}
+		.work-img {
+			transform: scale(1.1);
+      @media screen and (max-width: 768px) {
+        transform: none;
+      }
+		}
+	}
 	&._show {
 		// .work-img-wrap {
 		// 	transform: scaleY(1);
@@ -29,16 +45,6 @@
 		// .work-img {
 		//   transform: scale(1.2);
 		// }
-	}
-	&:hover {
-		.work-img-wrap {
-			&::after {
-				opacity: 0.75;
-			}
-		}
-		.work-img {
-			transform: scale(1.1);
-		}
 	}
 }
 .work-img-wrap {

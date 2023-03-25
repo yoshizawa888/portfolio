@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import gsap, { TweenMax as Tween } from "gsap";
+import gsap, { TweenMax as Tween } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RotationgGallery from '../assets/img/rotating_gallery.png';
@@ -9,7 +9,7 @@ const works = [
 	{
 		img: SeamlessColorBall,
 		link: 'https://yoshizawa888.github.io/seamless-color-ball/',
-		tecs: ['Vue.js','Vue Router', 'Three.js'],
+		tecs: ['Vue.js', 'Vue Router', 'Three.js'],
 	},
 	{
 		img: RotationgGallery,
@@ -34,7 +34,7 @@ const works = [
 	{
 		img: SeamlessColorBall,
 		link: 'https://yoshizawa888.github.io/seamless-color-ball/',
-		tecs: ['Vue.js','Vue Router', 'Three.js'],
+		tecs: ['Vue.js', 'Vue Router', 'Three.js'],
 	},
 	{
 		img: RotationgGallery,
@@ -49,7 +49,7 @@ const works = [
 	{
 		img: SeamlessColorBall,
 		link: 'https://yoshizawa888.github.io/seamless-color-ball/',
-		tecs: ['Vue.js','Vue Router', 'Three.js'],
+		tecs: ['Vue.js', 'Vue Router', 'Three.js'],
 	},
 	{
 		img: RotationgGallery,
@@ -76,10 +76,14 @@ const worksList: Tween[] = [];
 const onWorkHover = (index: number) => {
 	// const timeline = gsap.timeline();
 	// gsap.to(`li:nth-child(${index + 1}) .is-hover-text`, { duration: 0.3, opacity: 0.1 });
-	worksList[index] = gsap.to(`li:nth-child(${index + 1}) .is-hover-text`, { y: 5, opacity: 1, duration: 0.2, stagger: 0.03 });
+	if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+		worksList[index] = gsap.to(`li:nth-child(${index + 1}) .is-hover-text`, { y: 5, opacity: 1, duration: 0.2, stagger: 0.02 });
+	}
 };
 const onWorkLeave = (index: number) => {
-	worksList[index].reverse();
+	if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
+		worksList[index].reverse();
+	}
 };
 
 const listView = () => {

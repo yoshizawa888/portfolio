@@ -32,7 +32,7 @@ camera.position.z = distance;
 const scene = new Scene();
 
 // 波波
-const waveGeometry = new PlaneGeometry(300, 1, 256, 256);
+const waveGeometry = new PlaneGeometry(344, 1, 256, 256);
 const uniform = {
 	uTime: { value: 0 },
 };
@@ -77,17 +77,11 @@ window.addEventListener('resize', () => {
 
 for (let i = 0; i < boxCount; i++) {
 	meshArray[i].position.y = window.pageYOffset + yPosition[i];
-	// console.log(meshArray[i].position.y);
-	// console.log(window.pageYOffset);
-	// console.log('=========');
 }
 window.addEventListener('scroll', () => {
 	for (let i = 0; i < boxCount; i++) {
 		meshArray[i].position.y = (window.pageYOffset + yPosition[i] - i * boxPositionY[i] - h * 0.9) * 0.15;
 		waveMesh.position.y = window.pageYOffset * 0.3;
-		// meshArray[i].position.y = (window.pageYOffset + yPosition[i]);
-		// console.log(meshArray[i].position.y);
-		// console.log(i+'//////');
 	}
 });
 
@@ -101,14 +95,12 @@ const render = () => {
 	for (let i = 0; i < boxCount; i++) {
 		meshArray[i].rotation.y += 0.005;
 	}
-	// geometry.attributes.position.needsUpdate = true;
-
+  
 	uniform.uTime.value += 0.1;
 };
 
 onMounted(() => {
 	canvas.value!.appendChild(renderer.domElement);
-	// controls.value = new OrbitControls(camera, canvas.value!);
 	render();
 });
 </script>
