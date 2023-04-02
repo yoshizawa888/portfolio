@@ -368,7 +368,6 @@ legend {
   display: table; /* 1 */
   max-width: 100%; /* 1 */
   padding: 0; /* 3 */
-  #fff-space: normal; /* 1 */
 }
 
 /**
@@ -507,6 +506,7 @@ body {
 	-webkit-text-size-adjust: none;
 	line-height: 1.5;
 	color: #fff;
+  background: #000;
 }
 :root {
   font-family: 'Source Serif Pro';

@@ -1,18 +1,18 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
+import { onBeforeRouteLeave } from 'vue-router';
 
-import { WebGLRenderer, Scene, PerspectiveCamera, BufferGeometry, Clock, EdgesGeometry, ShaderMaterial, MeshBasicMaterial, Mesh, BoxGeometry, LineSegments, LineBasicMaterial, BufferAttribute, PlaneGeometry } from 'three';
+import { WebGLRenderer, Scene, PerspectiveCamera, EdgesGeometry, ShaderMaterial, Mesh, BoxGeometry, LineSegments, LineBasicMaterial, PlaneGeometry } from 'three';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import MainVisual from '../components/MainVisual.vue';
+import Contents from '../components/Contents.vue';
 
-import MainVisual from './MainVisual.vue';
-import Contents from './Contents.vue';
+import { TransitionLeave, TransitionMount } from '../assets/ts/transition';
 
 import fragmentSource from '../assets/shaders/waveShader.frag?raw';
 import vertexSource from '../assets/shaders/waveShader.vert?raw';
 
 const canvas = ref<HTMLDivElement>();
-const controls = ref<OrbitControls>();
 
 let w = innerWidth;
 let h = innerHeight;
@@ -85,23 +85,26 @@ window.addEventListener('scroll', () => {
 	}
 });
 
-const clock = new Clock();
 const render = () => {
 	requestAnimationFrame(() => {
 		render();
 	});
 	renderer.render(scene, camera);
-	const time = clock.getElapsedTime();
 	for (let i = 0; i < boxCount; i++) {
 		meshArray[i].rotation.y += 0.005;
 	}
-  
+
 	uniform.uTime.value += 0.1;
 };
 
 onMounted(() => {
+	const transitionMount = new TransitionMount();
 	canvas.value!.appendChild(renderer.domElement);
 	render();
+});
+
+onBeforeRouteLeave((to, from) => {
+  const transitionLeave = new TransitionLeave();
 });
 </script>
 
