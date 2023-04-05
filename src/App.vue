@@ -23,7 +23,7 @@
 
 .v-enter-from {
   opacity: 0;
-  transform: translateY(200px);
+  /* transform: translateY(200px); */
 }
 .v-enter-active,
 .v-leave-active {
@@ -31,7 +31,7 @@
 }
 .v-leave-to {
   opacity: 0;
-  transform: translateY(-200px);
+  /* transform: translateY(-200px); */
 }
 
 </style>

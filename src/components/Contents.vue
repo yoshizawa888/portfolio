@@ -36,36 +36,6 @@ const works = [
 		link: '/todo-list',
 		tecs: ['Vue.js'],
 	},
-	{
-		img: SeamlessColorBall,
-		link: '',
-		tecs: ['Vue.js', 'Vue Router', 'Three.js'],
-	},
-	{
-		img: RotationgGallery,
-		link: '',
-		tecs: ['Vue.js', 'Three.js'],
-	},
-	{
-		img: SeamlessColorBall,
-		link: '',
-		tecs: ['Vue.js', 'Three.js'],
-	},
-	{
-		img: SeamlessColorBall,
-		link: '',
-		tecs: ['Vue.js', 'Vue Router', 'Three.js'],
-	},
-	{
-		img: RotationgGallery,
-		link: '',
-		tecs: ['Vue.js', 'Three.js'],
-	},
-	{
-		img: SeamlessColorBall,
-		link: '',
-		tecs: ['Vue.js', 'Three.js'],
-	},
 ];
 
 const item = ref();
@@ -110,9 +80,9 @@ const listView = () => {
 	listItems.forEach((item: HTMLLIElement) => {
 		const imgWrap = item.querySelectorAll('.is-img-wrap')[0];
 		const tecs = item.querySelectorAll('.is-tec');
-			const trigger = ScrollTrigger.create({
+		const trigger = ScrollTrigger.create({
 			trigger: item,
-			start: 'top 80%',
+			start: 'top 85%',
 			toggleActions: 'play none none none',
 		});
 		const tl = gsap.timeline({
