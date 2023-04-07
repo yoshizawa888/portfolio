@@ -3,7 +3,6 @@ import { ref, onMounted } from 'vue';
 import gsap, { TweenMax as Tween } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 import RotationgGallery from '../assets/img/rotating_gallery.jpg';
 import SeamlessColorBall from '../assets/img/seamless_color_ball.jpg';
@@ -39,31 +38,11 @@ const works = [
 ];
 
 const item = ref();
-
-// const activeIndex = ref<number | null>(null);
-// const setActiveIndex = (index: number | null) => {
-// 	activeIndex.value = index;
-// 	gsap.from('._active .is-hover-text', { opacity: 0.1, duration: 0.5 });
-// 	console.log(11);
-// };
-
 const worksList: Tween[] = [];
 const onWorkHover = (index: number) => {
-	// const timeline = gsap.timeline();
-	// gsap.to(`li:nth-child(${index + 1}) .is-hover-text`, { duration: 0.3, opacity: 0.1 });
 	if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) {
 		worksList[index] = gsap.to(`li:nth-child(${index + 1}) .is-hover-text`, { y: 5, opacity: 1, duration: 0.2, stagger: 0.02 });
 	}
-
-	// const listItems = item.value;
-	// // li要素ごとにアニメーションを設定
-	// listItems.forEach((item: HTMLLIElement) => {
-	// 	const imgWrap = item.querySelectorAll('img')[0];
-	// 	const img = imgWrap.cloneNode(true);
-	// 	const tecs = item.querySelectorAll('.is-tec');
-	// 	console.log(img)
-	// 	tecs[0].appendChild(img);
-	// });
 };
 
 const onWorkLeave = (index: number) => {
@@ -73,7 +52,6 @@ const onWorkLeave = (index: number) => {
 };
 
 gsap.registerPlugin(ScrollTrigger);
-// let trigger: ScrollTrigger;
 const listView = () => {
 	const listItems = item.value;
 	// li要素ごとにアニメーションを設定
@@ -100,10 +78,8 @@ onMounted(() => {
 	<div class="contents">
 		<ul class="list">
 			<li class="item" ref="item" v-for="(work, index) in works">
-				<!-- <a :href="work.link" class="work-link"> -->
-				<!-- <a :href="work.link" class="work-link" :class="{ _active: activeIndex === index }" @mouseleave="setActiveIndex(null)" @mouseenter.stop="setActiveIndex(index)"> -->
-				<router-link :to="work.link" class="work-link" @mouseenter="onWorkHover(index)" @mouseleave="onWorkLeave(index)">
-					<div class="work-img-wrap is-img-wrap">
+				<router-link :to="work.link" class="work-link is-hover" @mouseenter="onWorkHover(index)" @mouseleave="onWorkLeave(index)">
+					<div class="work-img-wrap is-img-wrap is-hover">
 						<img class="work-img" :src="work.img" alt="" />
 						<div class="split-str-wrap">
 							<span class="split-str is-hover-text">V</span>
@@ -117,8 +93,8 @@ onMounted(() => {
 							<span class="split-str is-hover-text">k</span>
 						</div>
 					</div>
-					<ul class="tecs-list">
-						<li class="tec is-tec" v-for="tec in work.tecs">{{ tec }}</li>
+					<ul class="tecs-list is-hover">
+						<li class="tec is-tec is-hover" v-for="tec in work.tecs">{{ tec }}</li>
 					</ul>
 				</router-link>
 			</li>

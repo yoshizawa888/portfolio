@@ -21,8 +21,8 @@ onBeforeRouteLeave((to, from) => {
 		<div class="inner">
 			<img class="main-img" :src="imgUrl" alt="" />
 			<div class="link-wrap">
-				<p><a :href="siteUrl" target="_blank">View Site</a></p>
-				<p><a :href="gitUrl" target="_blank">GitHub</a></p>
+				<p><a class="is-hover" :href="siteUrl" target="_blank">View Site</a></p>
+				<p><a class="is-hover" :href="gitUrl" target="_blank">GitHub</a></p>
 			</div>
 			<div class="text-wrap">
 				<p class="title">このアプリについて</p>
@@ -30,7 +30,7 @@ onBeforeRouteLeave((to, from) => {
 					<slot></slot>
 				</div>
 			</div>
-			<router-link class="top-link" to="/">一覧へ戻る</router-link>
+			<router-link class="top-link is-hover" to="/">一覧へ戻る</router-link>
 		</div>
 	</div>
 </template>

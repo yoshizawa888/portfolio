@@ -11,6 +11,7 @@
   "dependencies": {
     "gsap": "^3.11.5",
     "sass": "^1.59.3",
+    "sf-vue-animated-cursor": "^1.0.0",
     "three": "^0.150.1",
     "vite-plugin-fonts": "^0.7.0",
     "vue": "^3.2.45",

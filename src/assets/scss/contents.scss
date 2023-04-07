@@ -15,7 +15,9 @@
 	@media screen and (max-width: 768px) {
 		width: 100%;
 	}
-  &:hover {
+}
+.work-link {
+	&:hover {
 		.work-img-wrap {
 			&::after {
 				opacity: 0.75;
@@ -30,21 +32,6 @@
         transform: none;
       }
 		}
-	}
-	&._show {
-		// .work-img-wrap {
-		// 	transform: scaleY(1);
-		// }
-		// .tecs-list {
-		//   opacity: 1;
-		// }
-	}
-}
-.work-link {
-	&._active {
-		// .work-img {
-		//   transform: scale(1.2);
-		// }
 	}
 }
 .work-img-wrap {

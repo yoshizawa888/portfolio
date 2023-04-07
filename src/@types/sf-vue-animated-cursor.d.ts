@@ -1,0 +1,1 @@
+declare module 'sf-vue-animated-cursor';
