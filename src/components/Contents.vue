@@ -9,21 +9,27 @@ import SeamlessColorBall from '../assets/img/seamless_color_ball.jpg';
 import ParticleWave from '../assets/img/particle_wave.jpg';
 import TargetGame from '../assets/img/target_game.jpg';
 import TodoList from '../assets/img/todo_list.jpg';
+import ResasChart from '../assets/img/resas_chart.jpg';
 const works = [
 	{
 		img: SeamlessColorBall,
 		link: '/seamless-color-ball',
-		tecs: ['Vue.js', 'Vue Router', 'Three.js'],
+		tecs: ['Vue.js', 'Vue Router', 'Three.js', 'TypeScript'],
 	},
 	{
 		img: RotationgGallery,
 		link: '/rotationg-gallery',
-		tecs: ['Vue.js', 'Three.js'],
+		tecs: ['Vue.js', 'Three.js', 'TypeScript'],
 	},
 	{
 		img: ParticleWave,
 		link: '/particle-wave',
-		tecs: ['Vue.js', 'Three.js'],
+		tecs: ['Vue.js', 'Three.js', 'TypeScript'],
+	},
+	{
+		img: ResasChart,
+		link: '/resas-chart',
+		tecs: ['Vue.js', 'TypeScript'],
 	},
 	{
 		img: TargetGame,
@@ -78,7 +84,8 @@ onMounted(() => {
 	<div class="contents">
 		<ul class="list">
 			<li class="item" ref="item" v-for="(work, index) in works">
-				<router-link :to="work.link" class="work-link is-hover" @mouseenter="onWorkHover(index)" @mouseleave="onWorkLeave(index)">
+				<router-link :to="work.link" class="work-link is-hover" @mouseenter="onWorkHover(index)"
+					@mouseleave="onWorkLeave(index)">
 					<div class="work-img-wrap is-img-wrap is-hover">
 						<img class="work-img" :src="work.img" alt="" />
 						<div class="split-str-wrap">

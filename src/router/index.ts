@@ -5,6 +5,7 @@ import SeamlessColorBall from '../views/SeamlessColorBall.vue';
 import ParticleWave from '../views/ParticleWave.vue';
 import TargetGame from '../views/TargetGame.vue';
 import TodoList from '../views/TodoList.vue';
+import ResasChart from '../views/ResasChart.vue';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -32,6 +33,10 @@ const routes = [
 	{
 		path: '/todo-list',
 		component: TodoList,
+	},
+	{
+		path: '/resas-chart',
+		component: ResasChart,
 	},
 ];
 
