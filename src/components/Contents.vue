@@ -10,7 +10,13 @@ import ParticleWave from '../assets/img/particle_wave.jpg';
 import TargetGame from '../assets/img/target_game.jpg';
 import TodoList from '../assets/img/todo_list.jpg';
 import ResasChart from '../assets/img/resas_chart.jpg';
+import ReactPoke from '../assets/img/react_poke.jpg';
 const works = [
+	{
+		img: ReactPoke,
+		link: '/react-poke',
+		tecs: ['React', 'React Router', 'Redux', 'TypeScript'],
+	},
 	{
 		img: SeamlessColorBall,
 		link: '/seamless-color-ball',

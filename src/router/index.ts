@@ -6,6 +6,7 @@ import ParticleWave from '../views/ParticleWave.vue';
 import TargetGame from '../views/TargetGame.vue';
 import TodoList from '../views/TodoList.vue';
 import ResasChart from '../views/ResasChart.vue';
+import ReactPoke from '../views/ReactPoke.vue';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -37,6 +38,10 @@ const routes = [
 	{
 		path: '/resas-chart',
 		component: ResasChart,
+	},
+	{
+		path: '/react-poke',
+		component: ReactPoke,
 	},
 ];
 
