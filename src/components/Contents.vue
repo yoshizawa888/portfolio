@@ -15,7 +15,7 @@ const works = [
 	{
 		img: ReactPoke,
 		link: '/react-poke',
-		tecs: ['React', 'React Router', 'Redux', 'TypeScript'],
+		tecs: ['React', 'React Router', 'Redux', 'CSS in JS', 'TypeScript'],
 	},
 	{
 		img: SeamlessColorBall,
